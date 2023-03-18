@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path_drawing/path_drawing.dart';
 import 'package:xml/xml.dart';
 
-part 'japan_map_helper.dart';
+import 'japan_map_helper.dart';
 
 class SVGMap extends StatefulWidget {
   const SVGMap({super.key});
@@ -61,13 +61,13 @@ class _SVGMapState extends State<SVGMap> {
           for (var element in paths) {
             final data = element.getAttribute('d');
             // debugPrint('data: $data');
-            final printName = _prefecture_name[_prefecture_id[id]];
+            final printName = prefecture_name[prefecture_id[id]];
             shapes.add(MapShape(
                 data,
                 printName!,
-                (_emergency_state.contains(_prefecture_id[id]))
+                (emergency_state.contains(prefecture_id[id]))
                     ? Colors.orange
-                    : (_warning_state.contains(_prefecture_id[id]))
+                    : (warning_state.contains(prefecture_id[id]))
                         ? Colors.yellow
                         : Colors.white));
           }

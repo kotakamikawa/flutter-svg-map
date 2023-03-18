@@ -1,6 +1,15 @@
-part of 'svg_map.dart';
+import 'package:flutter/material.dart';
 
-final _prefecture_id = {
+export 'japan_map_helper.dart';
+
+final Map<String, Color> prefectureColors = {
+  'Hokkaido': Colors.red,
+  'Aomori': Colors.green,
+  'Iwate': Colors.blue,
+  // 他の都道府県の色を設定
+};
+
+final prefecture_id = {
   'Hopporyodo': 1,
   'Hokkaido': 1,
   'Aomori': 2,
@@ -51,7 +60,7 @@ final _prefecture_id = {
   'Okinawa': 47,
 };
 
-final _prefecture_name = {
+final prefecture_name = {
   1: '北海道',
   2: '青森県',
   3: '岩手県',
@@ -101,7 +110,7 @@ final _prefecture_name = {
   47: '沖縄県',
 };
 
-final _emergency_state = [
+final emergency_state = [
   1,
   4,
   8,
@@ -125,7 +134,7 @@ final _emergency_state = [
   47,
 ];
 
-final _warning_state = [
+final warning_state = [
   7,
   16,
   17,

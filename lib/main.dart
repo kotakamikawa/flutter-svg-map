@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:svgmap/simple_svg_map.dart';
 
-import 'svg_map.dart';
+import 'japan_map_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,8 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: const SVGMap(),
+      // body: const SVGMap(),
+      body: JapanColoredMap(prefectureColors),
     );
   }
 }
